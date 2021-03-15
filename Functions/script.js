@@ -31,6 +31,33 @@ IncStep();
 console.log(GetStep());
 
 
-
-
 //Person "osztály" (ES6 előtt)
+
+function Person(fname,lname,born){
+this.fname = fname;
+this.lname = lname;
+this.born = born;
+
+this.getFullName = function()
+{
+    return this.fname+" "+this.lname;
+};
+this.getAge = function()
+{
+    return age;
+};
+function CalcAge(year)
+{
+    return (new Date()).getFullYear() - year;
+}
+var age = CalcAge(this.born);
+
+}
+
+var person = new Person("John", "Smith",1995);
+var person2 = new Person("Kiss","Istvan",2001);
+var info  = `Név: ${person.getFullName()},Született: ${person.born}, Kor: ${person.getAge()}`;
+var info2  = `Név: ${person2.getFullName()},Született: ${person2.born}, Kor: ${person2.getAge()}`;
+
+console.log(info);
+console.log(info2);
